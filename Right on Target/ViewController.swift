@@ -13,35 +13,32 @@ class ViewController: UIViewController {
     @IBOutlet var label: UILabel!
     
     var number = 0
-    var round = 0
+    var round = 1
     var points = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        print("viewDidLoad")
+        // генерируем случайное число
+        self.number = Int.random(in: 1...50)
+        // передаем значение случайного числа в label
+        self.label.text = String(self.number)
     }
 
     @IBAction func checkNumber() {
-        // если игра только начинается
-        if self.round == 0 {
-        // генерируем случайное число
-            self.number = Int.random(in: 1...50)
-        // передаем значение случайного числа в label
-            self.label.text = String(self.number)
-        // устанавливаем счетчик раундов на 1
-            self.round = 1
-        } else {
-        // получаем значение на слайдере
-        let numSlider = Int(self.slider.value.rounded()) // сравниваем значение с загаданным
+//        получаем значение на слайдере
+        let numSlider = Int(self.slider.value)
+        // сравниваем значение с загаданным
         // и подсчитываем очки
         if numSlider > self.number {
         self.points += 50 - numSlider + self.number
         } else if numSlider < self.number {
         self.points += 50 - self.number + numSlider
         } else {
-        self.points += 50 }
+        self.points += 50
+        }
         if self.round == 5 {
-        // выводим информационное окно // с результатами игры
+        // выводим информационное окно с результатами игры
         let alert = UIAlertController(
         title: "Игра окончена",
         message: "Вы заработали \(self.points) очков", preferredStyle: .alert)
@@ -52,10 +49,9 @@ class ViewController: UIViewController {
         } else {
             self.round += 1
         }
-    }
-        // генерируем случайное число
         self.number = Int.random(in: 1...50)
         // передаем значение случайного числа в label
         self.label.text = String(self.number)
-        }
+    }
 }
+
