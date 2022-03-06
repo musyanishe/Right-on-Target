@@ -57,12 +57,22 @@ class ViewController: UIViewController {
         self.label.text = String(self.number)
     }
     
-    @IBAction func showNextSceen() {
-//        загрузка storyboard
+//    ленивое свойство для хранения view controller
+    lazy var secondViewController: SecondViewController = getSecondViewController()
+    
+//    приватный метод, загружающий view controller
+    private func getSecondViewController() -> SecondViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        загрузка view controller и его сцены со Storyboard
         let viewController = storyboard.instantiateViewController(withIdentifier: "SecondViewController")
-        self.present(viewController, animated: true, completion: nil)
+        return viewController as! SecondViewController
+    }
+    
+    @IBAction func showNextSceen() {
+////        загрузка storyboard
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+////        загрузка view controller и его сцены со Storyboard
+//        let viewController = storyboard.instantiateViewController(withIdentifier: "SecondViewController")
+        self.present(secondViewController, animated: true, completion: nil)
     }
 
     @IBAction func checkNumber() {
