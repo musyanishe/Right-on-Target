@@ -56,6 +56,14 @@ class ViewController: UIViewController {
         // передаем значение случайного числа в label
         self.label.text = String(self.number)
     }
+    
+    @IBAction func showNextSceen() {
+//        загрузка storyboard
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        загрузка view controller и его сцены со Storyboard
+        let viewController = storyboard.instantiateViewController(withIdentifier: "SecondViewController")
+        self.present(viewController, animated: true, completion: nil)
+    }
 
     @IBAction func checkNumber() {
 //        получаем значение на слайдере

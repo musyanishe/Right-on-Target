@@ -49,6 +49,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2d6-Mr-SDy">
+                                <rect key="frame" x="715" y="362" width="117" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="О Программе"/>
+                                <connections>
+                                    <action selector="showNextSceen" destination="BYZ-38-t0r" eventType="touchUpInside" id="aS0-Sw-7iK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
@@ -59,9 +67,13 @@
                             <constraint firstItem="bkN-4X-Nek" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Lhf-Kq-24B"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EIW-sL-EWr" secondAttribute="trailing" constant="20" id="YSa-af-HnC"/>
                             <constraint firstItem="5HC-4p-PIa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cMy-Te-7b5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2d6-Mr-SDy" secondAttribute="trailing" constant="20" id="drc-Vv-kL0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2d6-Mr-SDy" secondAttribute="bottom" id="gx2-co-gAe"/>
                             <constraint firstItem="bkN-4X-Nek" firstAttribute="top" secondItem="EIW-sL-EWr" secondAttribute="bottom" constant="30" id="qmr-w9-mUq"/>
+                            <constraint firstItem="2d6-Mr-SDy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="w6U-QW-LzW"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="QEl-r8-ncg"/>
                     <connections>
                         <outlet property="label" destination="5HC-4p-PIa" id="fuD-ci-A85"/>
                         <outlet property="slider" destination="EIW-sL-EWr" id="bsv-WV-csb"/>
@@ -74,7 +86,7 @@
         <!--Second View Controller-->
         <scene sceneID="iRj-DS-sp1">
             <objects>
-                <viewController id="12G-vK-CN4" customClass="SecondViewController" customModule="Right_on_Target" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondViewController" id="12G-vK-CN4" customClass="SecondViewController" customModule="Right_on_Target" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Str-OV-VFp">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -92,10 +104,11 @@
                             <constraint firstItem="8ly-fw-IEA" firstAttribute="centerX" secondItem="Str-OV-VFp" secondAttribute="centerX" id="Eg9-9i-Eep"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="GWk-Ac-6oS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zJv-Wa-U0g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="680" y="83"/>
+            <point key="canvasLocation" x="731" y="83"/>
         </scene>
     </scenes>
     <resources>
